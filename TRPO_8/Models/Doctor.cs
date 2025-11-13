@@ -9,7 +9,7 @@ namespace TRPO_8
 {
     public class Doctor : INotifyPropertyChanged
     {
-        private int id;
+        private int id = 0;
         private string name = "";
         private string lastName = "";
         private string middleName = "";
@@ -25,31 +25,31 @@ namespace TRPO_8
         public string Name
         {
             get => name;
-            set { name = value; OnPropertyChanged(); }
+            set { name = value ?? ""; OnPropertyChanged(); }
         }
 
         public string LastName
         {
             get => lastName;
-            set { lastName = value; OnPropertyChanged(); }
+            set { lastName = value ?? ""; OnPropertyChanged(); }
         }
 
         public string MiddleName
         {
             get => middleName;
-            set { middleName = value; OnPropertyChanged(); }
+            set { middleName = value ?? ""; OnPropertyChanged(); }
         }
 
         public string Specialisation
         {
             get => specialisation;
-            set { specialisation = value; OnPropertyChanged(); }
+            set { specialisation = value ?? ""; OnPropertyChanged(); }
         }
 
         public string Password
         {
             get => password;
-            set { password = value; OnPropertyChanged(); }
+            set { password = value ?? ""; OnPropertyChanged(); }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

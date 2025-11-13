@@ -36,5 +36,17 @@
     <Page Update="Pages\RegisterDoctor.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\UI\Button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\UI\DataPicker.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\UI\TextBlock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\UI\TextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>

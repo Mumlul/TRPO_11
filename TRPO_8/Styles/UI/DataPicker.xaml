@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="FormDatePicker" TargetType="DatePicker" BasedOn="{StaticResource MaterialDesignDatePicker}">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ButtonStandardNormalBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
+    </Style>
+
+</ResourceDictionary>

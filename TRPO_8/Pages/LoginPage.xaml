@@ -22,7 +22,7 @@
             <DockPanel >
                 <TextBlock Text="ID"  Style="{StaticResource PrimaryTextBlock}"/>
                 <StackPanel Style="{StaticResource Vertical}">
-                    <TextBox x:Name="IdTextbox" Style="{StaticResource PrimaryTextBox}">
+                    <TextBox Name="IdTextbox" Style="{StaticResource PrimaryTextBox}">
                         <TextBox.Text>
                             <Binding Path="ID"  UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
@@ -40,7 +40,7 @@
                     </ItemsControl>
                 </StackPanel>
             </DockPanel>
-            <DockPanel >
+            <DockPanel>
                 <TextBlock Text="Пароль" Style="{StaticResource PrimaryTextBlock}"/>
                 <StackPanel Style="{StaticResource Vertical}">
                     <TextBox x:Name="PasswordTb" Style="{StaticResource PrimaryTextBox}">

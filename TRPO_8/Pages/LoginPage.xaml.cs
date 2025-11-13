@@ -23,11 +23,11 @@ namespace TRPO_8.Pages
     public partial class LoginPage : Page
     {
         private string doctorpath = System.IO.Path.Combine(AppContext.BaseDirectory, @"files\doctors");
-        private Doctor currentDoctor;
+        private Doctor currentDoctor=new Doctor();
         public LoginPage(Doctor? _currentDoctor=null)
         {
             InitializeComponent();
-            CurrentDoctor = _currentDoctor ?? new Doctor();
+            CurrentDoctor = _currentDoctor ?? new Doctor(); 
             this.DataContext = CurrentDoctor;
         }
 
