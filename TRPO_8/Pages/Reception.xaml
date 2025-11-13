@@ -1,0 +1,174 @@
+﻿
+<Page x:Class="TRPO_8.Pages.Reception"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:convertors="clr-namespace:TRPO_8.Converters"
+      xmlns:velidotors="clr-namespace:TRPO_8.ValidationRules"
+      mc:Ignorable="d"
+      Title="Reception"
+      Background="{DynamicResource WindowBackgroundBrush}">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Style="{StaticResource RootGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/> 
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/> 
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>    
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="Приём пациента"
+                       Style="{StaticResource PageTitle}"/>
+
+            <StackPanel Name="data" Grid.Row="1" Style="{StaticResource SectionContainer}">
+                <TextBlock Text="Текущий доктор" Style="{StaticResource FormSectionTitle}" />
+                <UniformGrid Columns="2" Style="{StaticResource UniformGridSpacing}">
+                    <StackPanel Style="{StaticResource Horizontal}">
+                        <TextBlock Text="Фамилия:" Style="{StaticResource FormLabel}"/>
+                        <TextBlock Text="{Binding LastName}" Style="{StaticResource PrimaryTextBlock}"/>
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource Horizontal}">
+                        <TextBlock Text="Имя:" Style="{StaticResource FormLabel}"/>
+                        <TextBlock Text="{Binding Name}" Style="{StaticResource PrimaryTextBlock}"/>
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource Horizontal}">
+                        <TextBlock Text="Отчество:" Style="{StaticResource FormLabel}"/>
+                        <TextBlock Text="{Binding MiddleName}" Style="{StaticResource PrimaryTextBlock}"/>
+                    </StackPanel>
+                    <StackPanel Style="{StaticResource Horizontal}">
+                        <TextBlock Text="Специальность:" Style="{StaticResource FormLabel}"/>
+                        <TextBlock Text="{Binding Specialisation}" Style="{StaticResource PrimaryTextBlock}"/>
+                    </StackPanel>
+                </UniformGrid>
+            </StackPanel>
+
+            <Border Grid.Row="2" Style="{StaticResource FormBorder}">
+                <StackPanel>
+                    <TextBlock Text="Пациент" Style="{StaticResource FormSectionTitle}"/>
+                    <UniformGrid Columns="3" Style="{StaticResource UniformGridSpacing}">
+                        <StackPanel Style="{StaticResource Horizontal}">
+                            <TextBlock Text="Фамилия:" Style="{StaticResource FormLabel}"/>
+                            <TextBlock Text="{Binding LastName}" MouseDown="Edit_patient" Style="{StaticResource PrimaryTextBlock}"/>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource Horizontal}">
+                            <TextBlock Text="Имя:" Style="{StaticResource FormLabel}"/>
+                            <TextBlock Text="{Binding Name}" Style="{StaticResource PrimaryTextBlock}"/>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource Horizontal}">
+                            <TextBlock Text="Отчество:" Style="{StaticResource FormLabel}"/>
+                            <TextBlock Text="{Binding MiddleName}" Style="{StaticResource PrimaryTextBlock}"/>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource Horizontal}">
+                            <TextBlock Text="Дата рождения:" Style="{StaticResource FormLabel}"/>
+                            <TextBlock Text="{Binding Birthday, StringFormat='{}{0:dd.MM.yyyy}'}" Style="{StaticResource PrimaryTextBlock}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Style="{StaticResource Horizontal}">
+                            <TextBlock Text="Совершеннолетний:" Style="{StaticResource FormLabel}"/>
+                            
+                            <TextBlock Style="{StaticResource PrimaryTextBlock}">
+                                <TextBlock.Text>
+                                    <Binding Path="Birthday">
+                                        <Binding.Converter>
+                                            <convertors:AgeConverter/>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </StackPanel>
+                        
+                        <StackPanel Style="{StaticResource Horizontal}">
+                            <TextBlock Text="Последний прием:" Style="{StaticResource FormLabel}"/>
+                            <TextBlock Name="LastAppointment"  Style="{StaticResource PrimaryTextBlock}"/>
+                        </StackPanel>
+                    </UniformGrid>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="3" Style="{StaticResource FormBorder}" Name="Add_Apointment">
+                <StackPanel>
+                    <TextBlock Text="Новый приём" Style="{StaticResource FormSectionTitle}"/>
+
+                    <DockPanel Style="{StaticResource FormRow}">
+                        <TextBlock Text="Диагноз:" Style="{StaticResource FormLabel}" />
+
+                        <StackPanel Style="{StaticResource Vertical}">
+                            <TextBox x:Name="Diagnos" Style="{StaticResource FormMultilineTextBox}">
+                                <TextBox.Text>
+                                    <Binding Path="Diagons" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <velidotors:TextRules/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                            <ItemsControl ItemsSource="{Binding ElementName=Diagnos,Path=(Validation.Errors)}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ErrorContent}" Style="{StaticResource ErrorMessage}"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                        
+                        
+                    </DockPanel>
+
+                    <DockPanel Style="{StaticResource FormRow}">
+                        <TextBlock Text="Рекомендации:" Style="{StaticResource FormLabel}" />
+
+                        <StackPanel Style="{StaticResource Vertical}">
+                            <TextBox x:Name="Recomendations" Style="{StaticResource FormMultilineTextBox}">
+                                <TextBox.Text>
+                                    <Binding Path="Recomendation" UpdateSourceTrigger="PropertyChanged">
+                                        <Binding.ValidationRules>
+                                            <velidotors:TextRules/>
+                                        </Binding.ValidationRules>
+                                    </Binding>
+                                </TextBox.Text>
+                            </TextBox>
+                            <ItemsControl ItemsSource="{Binding ElementName=Recomendations,Path=(Validation.Errors)}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ErrorContent}" Style="{StaticResource ErrorMessage}"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                        
+                    </DockPanel>
+
+                    <Button Content="Добавить приём" Style="{StaticResource AddButton}"  Click="ButtonBase_OnClick"/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="4" Style="{StaticResource FormBorder}">
+                <StackPanel>
+                    <TextBlock Text="История приёмов" Style="{StaticResource FormSectionTitle}"/>
+                    <ListView x:Name="Spisok"
+                              ItemsSource="{Binding ReceptionsList}"
+                              Style="{StaticResource MainListView}"
+                              >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Style="{StaticResource ListItemBorder}">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Date, StringFormat='Дата: {0:dd.MM.yyyy HH:mm}'}" Style="{StaticResource PrimaryTextBlock}"/>
+                                        <TextBlock Text="{Binding DoctorID, StringFormat='Доктор ID: {0}'}" Style="{StaticResource PrimaryTextBlock}"/>
+                                        <TextBlock Text="{Binding Diagons, StringFormat='Диагноз: {0}'}" Style="{StaticResource PrimaryTextBlock}"/>
+                                        <TextBlock Text="{Binding Recomendation, StringFormat='Рекомендации: {0}'}" Style="{StaticResource PrimaryTextBlock}"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+    </ScrollViewer>
+</Page>
