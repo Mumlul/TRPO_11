@@ -17,6 +17,11 @@
                 <ResourceDictionary Source="Styles/UI/DataPicker.xaml"/>
                 <ResourceDictionary Source="Styles/UI/Menu.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-         </ResourceDictionary>
+
+            <Style TargetType="DatePicker">
+                <Setter Property="AutomationProperties.Name" Value=""/>
+            </Style>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

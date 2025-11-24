@@ -5,5 +5,18 @@
   "LastName": "xzx",
   "MiddleName": "ZX",
   "Birthday": "2025-11-13T11:27:29.1799055+05:00",
-  "Receprions": []
+  "Receprions": [
+    {
+      "Date": "2025-11-25T01:28:19.9533975+05:00",
+      "DoctorID": 74901,
+      "Diagons": "asdasd",
+      "Recomendation": "asdasdasd"
+    },
+    {
+      "Date": "2025-11-25T01:28:28.0555794+05:00",
+      "DoctorID": 74901,
+      "Diagons": "asd",
+      "Recomendation": "asd"
+    }
+  ]
 }

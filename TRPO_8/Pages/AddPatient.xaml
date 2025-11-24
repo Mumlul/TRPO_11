@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:validarions="clr-namespace:TRPO_8.ValidationRules"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:TRPO_8.Pages"
       mc:Ignorable="d" 
       Title="AddPatient"
@@ -97,9 +98,9 @@
                         <TextBlock Text="Дата рождения" Style="{StaticResource FormLabel}"/>
                         
                         <StackPanel Style="{StaticResource Vertical}">
-                            <DatePicker x:Name="Birthday" Style="{StaticResource FormDatePicker}">
+                            <DatePicker x:Name="Birthday" Style="{DynamicResource FormDatePicker}" AutomationProperties.Name=" " materialDesign:HintAssist.Hint="Дата рождения">
                                 <DatePicker.SelectedDate>
-                                    <Binding Path="Birthday" UpdateSourceTrigger="PropertyChanged">
+                                    <Binding Path="Birthday" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
                                         <Binding.ValidationRules>
                                             <validarions:DataRules/>
                                         </Binding.ValidationRules>
