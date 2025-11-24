@@ -12,8 +12,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Menu Grid.Row="0">
-            <MenuItem Header="123" Click="ChangeThem"></MenuItem>
+        <Menu Grid.Row="0" Style="{StaticResource PrimaryMenu}">
+            <MenuItem Style="{StaticResource PrimaryMenuItem}" Header="Сменить тему" Click="ChangeThem"></MenuItem>
         </Menu>
 
         <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"/>

@@ -7,7 +7,6 @@
     <Application.Resources>
          <ResourceDictionary>
              <ResourceDictionary.MergedDictionaries>
-                 
                 <materialDesign:BundledTheme BaseTheme="Light"/>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml"/>
                 <ResourceDictionary Source="Styles/Themes/LightTheme.xaml"/>
@@ -16,6 +15,7 @@
                 <ResourceDictionary Source="Styles/UI/TextBlock.xaml"/>
                 <ResourceDictionary Source="Styles/UI/TextBox.xaml"/>
                 <ResourceDictionary Source="Styles/UI/DataPicker.xaml"/>
+                <ResourceDictionary Source="Styles/UI/Menu.xaml"/>
             </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </Application.Resources>

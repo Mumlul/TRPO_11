@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\mumlul\Desktop\Новая папка\TRPO_8\obj\Debug\net8.0-windows\
+C:\Users\mumlul\Desktop\trpo11\TRPO_8\obj\Debug\net8.0-windows\
 TRPO_8
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\mumlul\Desktop\Новая папка\TRPO_8\App.xaml
-131605187260
+C:\Users\mumlul\Desktop\trpo11\TRPO_8\App.xaml
+142014514417
 22399949373
 21813289798
 201-1417778352
-MainWindow.xaml;Pages\AddPatient.xaml;Pages\LoginPage.xaml;Pages\MainPage.xaml;Pages\Reception.xaml;Pages\RegisterDoctor.xaml;Styles\Themes\DarkTheme.xaml;Styles\Themes\LightTheme.xaml;Styles\UI\Button.xaml;Styles\UI\DataPicker.xaml;Styles\UI\pr.xaml;Styles\UI\TextBlock.xaml;Styles\UI\TextBox.xaml;
+MainWindow.xaml;Pages\AddPatient.xaml;Pages\LoginPage.xaml;Pages\MainPage.xaml;Pages\Reception.xaml;Pages\RegisterDoctor.xaml;Styles\Themes\DarkTheme.xaml;Styles\Themes\LightTheme.xaml;Styles\UI\Button.xaml;Styles\UI\DataPicker.xaml;Styles\UI\Menu.xaml;Styles\UI\pr.xaml;Styles\UI\TextBlock.xaml;Styles\UI\TextBox.xaml;
 
 False
 

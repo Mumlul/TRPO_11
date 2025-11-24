@@ -3,6 +3,7 @@
 
     <Style x:Key="FormDatePicker" TargetType="DatePicker" BasedOn="{StaticResource MaterialDesignDatePicker}">
         <Setter Property="Height" Value="25"/>
+        <Setter Property="AutomationProperties.Name" Value="DatePicker"/>
         <Setter Property="Background" Value="{DynamicResource WindowBackgroundBrush}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ButtonStandardNormalBrush}"/>
         <Setter Property="BorderThickness" Value="1"/>

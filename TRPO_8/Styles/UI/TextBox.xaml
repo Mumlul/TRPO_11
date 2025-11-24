@@ -20,6 +20,7 @@
     <Style x:Key="FormTextBox" TargetType="TextBox" BasedOn="{StaticResource MaterialDesignTextBoxBase}">
         <Setter Property="Height" Value="35"/>
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
+        <Setter Property="AutomationProperties.Name" Value="{Binding RelativeSource={RelativeSource Self}, Path=Name}"/>
         <Setter Property="Validation.ErrorTemplate">
             <Setter.Value>
                 <ControlTemplate >
@@ -38,6 +39,7 @@
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="Height" Value="60"/>
         <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
+        <Setter Property="AutomationProperties.Name" Value="{Binding RelativeSource={RelativeSource Self}, Path=Name}"/>
         <Setter Property="Validation.ErrorTemplate">
             <Setter.Value>
                 <ControlTemplate >

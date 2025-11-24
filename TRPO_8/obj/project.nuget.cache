@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z1t4APxLgP8=",
+  "dgSpecHash": "O9UTvu3HdwQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mumlul\\Desktop\\Новая папка\\TRPO_8\\TRPO_8.csproj",
+  "projectFilePath": "C:\\Users\\mumlul\\Desktop\\trpo11\\TRPO_8\\TRPO_8.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mumlul\\.nuget\\packages\\materialdesigncolors\\5.3.0\\materialdesigncolors.5.3.0.nupkg.sha512",
     "C:\\Users\\mumlul\\.nuget\\packages\\materialdesignthemes\\5.3.0\\materialdesignthemes.5.3.0.nupkg.sha512",
